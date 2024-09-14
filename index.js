@@ -34,10 +34,15 @@ const serverListener = (req, res) => {
 
     fs.readFile(directory, (err, data) => {
         if (err) {
-            fs.readFile(path.join(__dirname,'server','err.html'),(err, data)=>{
-                res.writeHead(404, {"Content-Type":"text/html"});
-                res.end(data)
-            })
+            if (err.code === 'ENOENT') {
+                fs.readFile(path.join(__dirname, 'server', 'err.html'), (err, data) => {
+                    res.writeHead(404, { "Content-Type": "text/html" });
+                    res.end(data)
+                })
+            } else {
+                res.writeHead(500, { "Content-Type": "text/html" });
+                res.end('<h1> Server Error </h1>')
+            }
         }
         else {
             res.writeHead(200, { "Content-Type": contentType });
