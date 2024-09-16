@@ -8,7 +8,7 @@ const fs = require('fs');
 const serverListener = (req, res) => {
     let directory = path.join(__dirname, 'server', req.url === '/' ? '/index.html' : req.url)
 
-    // let extension = path.extname(__dirname, "server", req.url === '/'? 'index.html':req.url);
+    // let extension = path.extname(__dirname, "server", req.url === '/'? 'index.html':req.url); // 
 
     let extension1 = path.extname(directory)
 
