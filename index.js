@@ -31,18 +31,11 @@ const serverListener = (req, res) => {
             contentType = 'application/json';
             break;
     }
+    console.log(req.url)
 
     fs.readFile(directory, (err, data) => {
         if (err) {
-            if (err.code === 'ENOENT') {
-                fs.readFile(path.join(__dirname, 'server', 'err.html'), (err, data) => {
-                    res.writeHead(404, { "Content-Type": "text/html" });
-                    res.end(data)
-                })
-            } else {
-                res.writeHead(500, { "Content-Type": "text/html" });
-                res.end('<h1> Server Error </h1>')
-            }
+            console.log(err)
         }
         else {
             res.writeHead(200, { "Content-Type": contentType });
@@ -56,7 +49,7 @@ const serverListener = (req, res) => {
 
 const server = http.createServer(serverListener);
 
-server.listen(8000, function () { console.log('server initiated') })
+server.listen(4000, function () { console.log('server initiated') })
 
 
 
