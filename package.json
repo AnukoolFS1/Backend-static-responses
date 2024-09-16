@@ -8,14 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "terminal.integrated.profiles.windows": {
-    "Git Bash": {
-      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
-      "args": ["--login"]
-    },
-    "PowerShell": {
-      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-    }
-  }
+  "description": ""
 }
