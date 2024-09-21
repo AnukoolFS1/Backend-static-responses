@@ -4,7 +4,6 @@ const fs = require('fs');
 
 // const directory = path.join(__dirname)
 
-
 const serverListener = (req, res) => {
     let directory = path.join(__dirname, 'server', req.url === '/' ? '/index.html' : req.url)
 
@@ -46,6 +45,6 @@ const serverListener = (req, res) => {
     // res.writeHead(200, { "Content-Type": "text/html" });
     // res.end('<h1>heading</h1>');
 }
-const server = http.createServer(serverListener)
+const server = http.createServer(serverListener);
 
-server.listen(3000, function () { console.log('server initiated') })
+server.listen(3000, function () { console.log('server initiated') });

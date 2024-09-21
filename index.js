@@ -38,13 +38,10 @@ const serverListener = (req, res) => {
             console.log(err)
         }
         else {
-            res.writeHead(200, { "Content-Type": contentType });
+            res.writeHead(200, { "Content-Type": contentType }); // status code and content-header
             res.end(data)
         }
     })
-
-
-
 }
 
 const server = http.createServer(serverListener);
